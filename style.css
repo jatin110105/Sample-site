@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(-45deg, #ff6ec4, #7873f5, #4adede, #f9d423);
+  background-size: 400% 400%;
+  animation: gradientShift 12s ease infinite;
+  position: relative;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.container {
+  text-align: center;
+  z-index: 2;
+  color: #fff;
+  animation: fadeIn 1.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.name {
+  font-size: 3.5rem;
+  font-weight: 800;
+  text-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.tagline {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.btn {
+  margin-top: 2rem;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #7873f5;
+  background: #fff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.msg {
+  margin-top: 1.2rem;
+  font-size: 1.1rem;
+  min-height: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.msg.show {
+  opacity: 1;
+}
+
+/* Floating background shapes */
+.bg-shapes {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  animation: float 8s ease-in-out infinite;
+}
+
+.shape1 {
+  width: 180px;
+  height: 180px;
+  top: 10%;
+  left: 15%;
+  animation-duration: 9s;
+}
+
+.shape2 {
+  width: 120px;
+  height: 120px;
+  bottom: 15%;
+  right: 20%;
+  animation-duration: 7s;
+  animation-delay: 1s;
+}
+
+.shape3 {
+  width: 90px;
+  height: 90px;
+  bottom: 30%;
+  left: 25%;
+  animation-duration: 10s;
+  animation-delay: 2s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-40px) translateX(20px); }
+}
